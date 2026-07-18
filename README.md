@@ -440,8 +440,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 If you found this project interesting or useful, please consider giving it a ⭐ —
 it genuinely helps and keeps the motivation going for building out the full roadmap.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/friday&type=Date)](https://star-history.com/#yourusername/friday&Date)
 
-**Made with ❤️, ☕, and a lot of debugging by [Your Name]**
+**Made with ❤️, ☕, and a lot of debugging by [R Sanjay]**
 
 </div>
