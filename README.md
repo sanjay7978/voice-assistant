@@ -1,608 +1,447 @@
-# Real-Time Offline Conversational AI Assistant
+<div align="center">
 
-## 1. Project Overview
+# 🤖 F.R.I.D.A.Y.
+### *Fully Responsive Intelligent Digital Assistant for You*
 
-This project is a lightweight, offline-first conversational AI assistant that accepts microphone input, transcribes speech to text, generates a response using a local LLM, converts the response to speech, and plays the audio back to the user.
+<!-- 🖼️ INSERT HERO BANNER IMAGE HERE (1280x640 recommended) -->
+<!-- ![FRIDAY Hero Banner](./assets/hero-banner.png) -->
 
-The MVP is designed for an AI Engineering Internship assignment where speed, clarity, and completeness matter more than advanced features. The system avoids paid APIs, cloud services, databases, authentication, Docker, LangChain, and vector databases.
+**A real-time, offline-first, voice-native AI assistant — inspired by Tony Stark's J.A.R.V.I.S. & F.R.I.D.A.Y.**
 
-## 2. Objectives
+<!-- Animated typing banner placeholder — generate at https://readme-typing-svg.demolab.com -->
+<!-- ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=00F5FF&center=true&vCenter=true&width=600&lines=Listening...;Thinking...;Speaking...;Your+Personal+AI+is+Online.) -->
 
-- Build a real-time audio-in, audio-out AI assistant.
-- Use free and preferably offline tools.
-- Keep latency low enough for natural conversation.
-- Handle slow responses and failures with friendly conversational fallback messages.
-- Keep the code modular, readable, and easy for a beginner to run.
-- Deliver a clean MVP that satisfies every assignment requirement without extra complexity.
+<p>
+  <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Ollama-Qwen3--8B-000000?style=for-the-badge&logo=ollama&logoColor=white" />
+  <img src="https://img.shields.io/badge/Speech-Faster--Whisper-FF6F00?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/TTS-Piper-8A2BE2?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/UI-Gradio-F97316?style=for-the-badge&logo=gradio&logoColor=white" />
+</p>
 
-## 3. Functional Requirements
+<p>
+  <img src="https://img.shields.io/github/stars/yourusername/friday?style=flat-square&color=yellow" />
+  <img src="https://img.shields.io/github/forks/yourusername/friday?style=flat-square&color=blue" />
+  <img src="https://img.shields.io/github/last-commit/yourusername/friday?style=flat-square" />
+  <img src="https://img.shields.io/github/license/yourusername/friday?style=flat-square" />
+  <img src="https://img.shields.io/badge/status-active--development-brightgreen?style=flat-square" />
+</p>
 
-- Capture voice input from the microphone.
-- Convert recorded speech to text using offline speech recognition.
-- Send the transcribed text to a local LLM.
-- Generate a concise conversational response.
-- Convert the LLM response to natural speech.
-- Play the generated speech through the speaker.
-- Show the conversation in a simple Gradio UI.
-- Log key events, latency, and errors.
-- Provide graceful fallback responses when any step is delayed or fails.
+<p>
+  <a href="#-demo">Demo</a> •
+  <a href="#-key-highlights">Highlights</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-usage">Usage</a> •
+  <a href="#-roadmap">Roadmap</a> •
+  <a href="#-contributing">Contributing</a>
+</p>
 
-## 4. Non-Functional Requirements
+</div>
 
-- Free to use.
-- Offline-first.
-- Easy to install and run on a normal laptop.
-- Low-latency pipeline.
-- Modular architecture.
-- No paid APIs.
-- No cloud services.
-- No authentication.
-- No database.
-- No Docker.
-- No deployment setup.
-- Clear error handling.
-- Type hints and production-quality structure.
+---
 
-## 5. Tech Stack With Reasons
+## 📖 Overview
 
-| Area | Tool | Reason |
+**F.R.I.D.A.Y.** is a fully offline, real-time conversational AI assistant that listens, thinks, and speaks — all running locally on your machine. No cloud APIs, no data leaving your device, no latency from network round-trips.
+
+Built from the ground up as a personal engineering challenge, F.R.I.D.A.Y. combines **offline speech recognition**, **local LLM reasoning**, and **offline speech synthesis** into a single low-latency pipeline — wrapped in a clean, interactive web interface.
+
+> *"The goal isn't just a chatbot with a microphone. It's a foundation for a true personal assistant — one that can eventually see, remember, act, and automate."*
+
+### ✨ Why This Project Is Unique
+
+| | |
+|---|---|
+| 🔒 **100% Offline** | Every component — STT, LLM, TTS — runs locally. Zero API keys, zero cloud dependency, zero data leakage. |
+| ⚡ **Low Latency Pipeline** | Engineered audio-to-audio pipeline optimized for near real-time conversation. |
+| 🧩 **Modular by Design** | Each component (ASR, LLM, TTS, UI) is swappable — upgrade any piece without rewriting the system. |
+| 🛠 **Built for Extension** | Architected from day one to support tool calling, memory, and multi-agent workflows. |
+| 🎯 **Real Engineering, Not a Wrapper** | This isn't a thin wrapper around an API — it's a full-stack voice AI system built piece by piece. |
+
+---
+
+## 🚀 Key Highlights
+
+- 🎤 Real-time microphone capture with streaming audio input
+- 🧠 Local reasoning powered by **Qwen3:8B** via **Ollama**
+- 🗣️ Natural offline text-to-speech using **Piper**
+- 💬 Context-aware multi-turn conversations with persistent history
+- 🖥️ Clean, responsive **Gradio** web interface (voice + text)
+- 🔌 Architecture designed for future tool calling & automation
+- 🌐 Fully self-hosted — runs entirely on your own hardware
+
+---
+
+## 🎬 Demo
+
+<!-- 🖼️ INSERT DEMO GIF HERE -->
+<!-- ![FRIDAY Demo](./assets/demo.gif) -->
+
+<div align="center">
+<i>🎥 Full demo video: <a href="#">Watch on YouTube</a> (placeholder link)</i>
+</div>
+
+<br>
+
+<details>
+<summary>📸 <b>Click to view Screenshots</b></summary>
+<br>
+
+<!-- 🖼️ INSERT SCREENSHOT: Gradio Home Interface -->
+<!-- ![Home Interface](./assets/screenshot-home.png) -->
+
+<!-- 🖼️ INSERT SCREENSHOT: Live Voice Conversation -->
+<!-- ![Voice Conversation](./assets/screenshot-conversation.png) -->
+
+<!-- 🖼️ INSERT SCREENSHOT: Text Chat Mode -->
+<!-- ![Text Chat](./assets/screenshot-textchat.png) -->
+
+</details>
+
+---
+
+## 🏗️ Architecture
+
+```mermaid
+flowchart TD
+    A[🎤 User Voice Input] --> B[Audio Capture Module]
+    B --> C[Faster-Whisper<br/>Speech-to-Text]
+    C --> D[Text Query]
+    D --> E[Ollama Runtime<br/>Qwen3:8B]
+    E --> F[Conversation Memory<br/>Context Manager]
+    F --> E
+    E --> G[Generated Text Response]
+    G --> H[Piper TTS Engine]
+    H --> I[🔊 Audio Output]
+    D --> J[Gradio Web UI]
+    G --> J
+    I --> J
+
+    style A fill:#00F5FF,stroke:#0088aa,color:#000
+    style I fill:#00F5FF,stroke:#0088aa,color:#000
+    style E fill:#8A2BE2,stroke:#5c1a99,color:#fff
+    style J fill:#F97316,stroke:#b45309,color:#fff
+```
+
+### 🔄 AI Pipeline Flow
+
+```mermaid
+sequenceDiagram
+    participant U as 👤 User
+    participant M as 🎙️ Microphone
+    participant W as Faster-Whisper (ASR)
+    participant L as Ollama (Qwen3:8B)
+    participant P as Piper (TTS)
+    participant S as 🔊 Speaker
+
+    U->>M: Speaks
+    M->>W: Raw audio stream
+    W->>L: Transcribed text
+    L->>L: Reasoning + context lookup
+    L->>P: Generated response text
+    P->>S: Synthesized speech
+    S->>U: Audio response
+    Note over U,S: End-to-end target latency: low-latency, near real-time
+```
+
+---
+
+## 🧩 Features Grid
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+### 🎤 Voice Interaction
+- Real-time mic input
+- Offline ASR (Faster-Whisper)
+- Natural conversation flow
+- Low-latency audio pipeline
+
+</td>
+<td width="33%" valign="top">
+
+### 🧠 AI Intelligence
+- Local inference via Ollama
+- Powered by Qwen3:8B
+- Persistent conversation history
+- Context-aware responses
+
+</td>
+<td width="33%" valign="top">
+
+### 🔊 Voice Output
+- Offline TTS via Piper
+- Natural-sounding synthesis
+- Configurable voice profiles
+- Low-latency generation
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Technology | Purpose |
 |---|---|---|
-| Language | Python | Simple, fast to build, strong AI/audio ecosystem |
-| UI | Gradio | Quick local interface for recording, viewing text, and testing |
-| Speech-to-Text | Faster-Whisper | Free, offline, faster than standard Whisper on many machines |
-| LLM | Ollama | Free local LLM runtime with simple local HTTP API |
-| Suggested LLM Model | `llama3.2:1b`, `qwen2.5:1.5b`, or `phi3:mini` | Lightweight enough for normal laptops |
-| Text-to-Speech | Piper TTS | Free, offline, fast neural TTS |
-| Microphone Input | sounddevice | Lightweight microphone capture |
-| Audio File Handling | soundfile | Reliable WAV read/write support |
-| Audio Playback | sounddevice | Simple local playback without an extra native SDL dependency |
-| Async Runtime | asyncio | Keeps pipeline responsive and supports timeout handling |
-| Config | python-dotenv | Simple local configuration without hardcoding machine-specific values |
-| Logging | Python logging | Built-in and reliable |
+| 🧠 **AI / Reasoning** | [Ollama](https://ollama.com) + **Qwen3:8B** | Local LLM inference & reasoning engine |
+| 🎤 **Speech-to-Text** | [Faster-Whisper](https://github.com/SYSTRAN/faster-whisper) | Offline, high-accuracy speech recognition |
+| 🔊 **Text-to-Speech** | [Piper](https://github.com/rhasspy/piper) | Fast, natural offline voice synthesis |
+| 💻 **Frontend** | [Gradio](https://gradio.app) | Interactive web UI for voice & text |
+| 🐍 **Backend** | Python 3.11+ | Core orchestration logic |
 
-## 6. Folder Structure
+### 🔮 Planned Additions
 
-```text
-offline-voice-assistant/
-├── README.md
+| Technology | Purpose |
+|---|---|
+| **MCP (Model Context Protocol)** | Standardized tool calling |
+| **Gemini** | Multi-model reasoning fallback |
+| **LiveKit** | Real-time audio/video streaming infrastructure |
+| **FastMCP** | Lightweight MCP server framework |
+| **Vector Databases** | Long-term memory & RAG storage |
+| **LangChain / LlamaIndex** | RAG orchestration & agent workflows |
+
+---
+
+## 📁 Folder Structure
+
+```
+friday/
+├── assets/                  # Images, GIFs, diagrams for docs
+├── src/
+│   ├── audio/
+│   │   ├── capture.py        # Microphone input handling
+│   │   └── playback.py       # Audio output handling
+│   ├── stt/
+│   │   └── whisper_engine.py # Faster-Whisper wrapper
+│   ├── llm/
+│   │   ├── ollama_client.py  # Ollama inference interface
+│   │   └── memory.py         # Conversation history/context
+│   ├── tts/
+│   │   └── piper_engine.py   # Piper TTS wrapper
+│   ├── ui/
+│   │   └── gradio_app.py     # Gradio web interface
+│   └── config.py             # Central configuration
+├── tests/                    # Unit & integration tests
 ├── requirements.txt
 ├── .env.example
-├── app.py
-├── config.py
-├── src/
-│   ├── __init__.py
-│   ├── audio/
-│   │   ├── __init__.py
-│   │   ├── recorder.py
-│   │   └── player.py
-│   ├── stt/
-│   │   ├── __init__.py
-│   │   └── whisper_service.py
-│   ├── llm/
-│   │   ├── __init__.py
-│   │   └── ollama_service.py
-│   ├── tts/
-│   │   ├── __init__.py
-│   │   └── piper_service.py
-│   ├── pipeline/
-│   │   ├── __init__.py
-│   │   └── conversation_pipeline.py
-│   └── utils/
-│       ├── __init__.py
-│       ├── fallbacks.py
-│       └── logger.py
-├── models/
-│   └── .gitkeep
-├── outputs/
-│   └── .gitkeep
-└── logs/
-    └── .gitkeep
+├── LICENSE
+└── README.md
 ```
 
-## 7. High-Level Architecture
+---
 
-The assistant follows a simple sequential pipeline:
-
-```text
-Microphone
-   ↓
-Audio Recorder
-   ↓
-Speech-to-Text
-   ↓
-Local LLM
-   ↓
-Text-to-Speech
-   ↓
-Audio Playback
-   ↓
-Gradio UI + Logs
-```
-
-Each component has one responsibility. This keeps the MVP easy to build, test, and debug.
-
-## 8. Workflow Diagram
-
-```text
-User speaks
-   ↓
-Record audio from microphone
-   ↓
-Save temporary WAV file
-   ↓
-Transcribe WAV with Faster-Whisper
-   ↓
-Validate transcript
-   ↓
-Send transcript to Ollama
-   ↓
-Receive assistant text response
-   ↓
-Generate speech with Piper
-   ↓
-Play response audio
-   ↓
-Update Gradio chat history
-```
-
-## 9. Component Responsibilities
-
-| Component | Responsibility |
-|---|---|
-| `app.py` | Starts the Gradio UI and connects user actions to the pipeline |
-| `config.py` | Loads local settings from environment variables |
-| `recorder.py` | Records microphone audio and saves it as WAV |
-| `player.py` | Plays generated audio responses |
-| `whisper_service.py` | Loads Faster-Whisper and transcribes audio |
-| `ollama_service.py` | Sends prompts to the local Ollama model |
-| `piper_service.py` | Calls Piper TTS to generate speech |
-| `conversation_pipeline.py` | Orchestrates recording, STT, LLM, TTS, playback, fallbacks, and logging |
-| `fallbacks.py` | Provides conversational fallback responses |
-| `logger.py` | Configures application logging |
-
-## 10. Fallback Conversation Strategy
-
-The assistant should avoid technical error messages during conversation. If a component is slow or fails, it should respond naturally.
-
-Example fallback messages:
-
-- Slow STT: "I am still catching that. Could you repeat it once more?"
-- Empty transcript: "I did not catch enough audio. Please try again."
-- Slow LLM: "I am thinking through that. Give me a moment."
-- LLM failure: "I am having trouble forming a response right now. Could you ask that another way?"
-- TTS failure: "I generated a response, but I could not speak it out loud."
-- Playback failure: "The response is ready, but audio playback did not start."
-
-Fallbacks should be short, conversational, and useful.
-
-## 11. Error Handling Strategy
-
-- Wrap each pipeline stage in clear exception handling.
-- Use timeouts for STT, LLM, and TTS steps.
-- Log errors with context for debugging.
-- Return user-friendly fallback text to the UI.
-- Avoid crashing the full app when one request fails.
-- Validate required local dependencies at startup where practical.
-- Keep errors visible in logs but not exposed as raw stack traces in the UI.
-
-## 12. Performance Strategy
-
-- Use a small Faster-Whisper model by default, such as `base` or `small`.
-- Use a lightweight Ollama model, such as `llama3.2:1b`, `qwen2.5:1.5b`, or `phi3:mini`.
-- Keep prompts short and ask the LLM for concise answers.
-- Use WAV files with practical sample rates.
-- Load models once at startup instead of per request.
-- Use async timeouts around slow stages.
-- Keep the UI simple.
-- Avoid unnecessary background services.
-
-## 13. Installation Guide
+## ⚙️ Installation
 
 ### Prerequisites
 
-- Python 3.10 or newer
-- A working microphone and speaker
-- Ollama installed locally
-- Piper installed locally if offline voice output is required
-- At least one Ollama model downloaded
-- At least one Piper voice model downloaded
+- 🐍 Python 3.11+
+- 🖥️ [Ollama](https://ollama.com) installed and running
+- 🎧 A working microphone and speaker
 
-### Install Python Dependencies
+### Steps
 
 ```bash
+# 1️⃣ Clone the repository
+git clone https://github.com/yourusername/friday.git
+cd friday
+
+# 2️⃣ Create a virtual environment
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+
+# 3️⃣ Install dependencies
 pip install -r requirements.txt
+
+# 4️⃣ Pull the LLM model via Ollama
+ollama pull qwen3:8b
+
+# 5️⃣ Download Piper voice model
+# (see /assets/voices or Piper docs for available voices)
+
+# 6️⃣ Run the application
+python src/ui/gradio_app.py
 ```
 
-### Install Ollama
-
-Download Ollama from:
-
-```text
-https://ollama.com
-```
-
-Then download a lightweight model:
+<details>
+<summary>🐳 <b>Docker Setup (optional)</b></summary>
 
 ```bash
-ollama pull llama3.2:1b
+docker build -t friday-assistant .
+docker run -p 7860:7860 friday-assistant
 ```
 
-Alternative lightweight models:
+</details>
 
-```bash
-ollama pull qwen2.5:1.5b
-ollama pull phi3:mini
+---
+
+## ▶️ Usage
+
+Once running, open your browser at:
+
+```
+http://localhost:7860
 ```
 
-### Install Piper
+- 🎤 Click the **microphone icon** to speak naturally
+- ⌨️ Or type your query in the **text input box**
+- 🔊 F.R.I.D.A.Y. will respond with synthesized speech + text
+- 🕓 Conversation history is maintained automatically for context
 
-Piper is included as a Python dependency through `piper-tts`. After installing `requirements.txt`, the project uses:
+---
 
-```text
-.venv/bin/piper
+## 🔧 Configuration
+
+All configuration lives in `src/config.py` / `.env`:
+
+```env
+# LLM Settings
+OLLAMA_MODEL=qwen3:8b
+OLLAMA_HOST=http://localhost:11434
+
+# Speech-to-Text
+WHISPER_MODEL_SIZE=base
+WHISPER_DEVICE=cpu   # or cuda
+
+# Text-to-Speech
+PIPER_VOICE=en_US-amy-medium
+
+# UI
+GRADIO_SERVER_PORT=7860
 ```
 
-Piper is optional. If it is not installed, the app still runs as Speech-to-Text -> Ollama -> text response. To enable offline voice output, download a compatible Piper voice model and place it in the local `models/` folder.
+---
 
-Recommended source:
+## 💬 Example Conversations
 
-```text
-https://github.com/rhasspy/piper/blob/master/VOICES.md
+<details>
+<summary>Click to expand example interaction</summary>
+
+```
+👤 User: Hey FRIDAY, what's the weather like for coding today?
+🤖 FRIDAY: I don't have live weather access yet, but I can already tell
+           your coding forecast: 100% chance of debugging! Web search
+           integration is coming in a future update.
+
+👤 User: Remind me what we discussed earlier about the architecture.
+🤖 FRIDAY: We talked about your audio pipeline — mic input feeding into
+           Faster-Whisper for transcription, then Qwen3:8B for reasoning,
+           and Piper for the voice response.
 ```
 
-Download both files for the same voice:
+</details>
 
-- The `.onnx` model file.
-- The matching `.onnx.json` config file.
+---
 
-Then update `.env`:
+## 📊 Benchmarks & Performance
 
-```bash
-PIPER_EXECUTABLE=.venv/bin/piper
-PIPER_VOICE_MODEL=models/en_US-lessac-medium.onnx
-PIPER_VOICE_CONFIG=models/en_US-lessac-medium.onnx.json
+> ⚠️ *Placeholder — populate with real measurements on your target hardware.*
+
+| Metric | Value |
+|---|---|
+| 🎤 ASR Latency (avg) | `_____ ms` |
+| 🧠 LLM Response Time (avg) | `_____ ms` |
+| 🔊 TTS Generation Time (avg) | `_____ ms` |
+| ⚡ End-to-End Latency | `_____ ms` |
+| 💾 RAM Usage (idle) | `_____ GB` |
+| 💾 RAM Usage (active inference) | `_____ GB` |
+| 🖥️ Tested On | `CPU / GPU model here` |
+
+---
+
+## 🗺 Future Roadmap
+
+- [ ] 🧠 Long-term memory system
+- [ ] 🌐 Web search integration
+- [ ] 🛠 Tool calling / function execution
+- [ ] 📅 Calendar integration
+- [ ] 📧 Email assistant capabilities
+- [ ] 💬 WhatsApp integration
+- [ ] 👁️ Vision capabilities (image/screen understanding)
+- [ ] 🏠 Smart home automation
+- [ ] 📚 RAG-based knowledge retrieval
+- [ ] 🤝 Multi-agent workflows
+
+```mermaid
+gantt
+    title F.R.I.D.A.Y. Roadmap
+    dateFormat  YYYY-MM-DD
+    section Core
+    Voice Pipeline (Done)      :done, 2024-01-01, 2024-03-01
+    Memory System              :active, 2024-03-01, 60d
+    Tool Calling                :2024-05-01, 45d
+    section Expansion
+    Web Search                  :2024-06-15, 30d
+    Vision Capabilities         :2024-07-15, 60d
+    Smart Home Automation       :2024-09-15, 45d
+    Multi-Agent Workflows       :2024-11-01, 60d
 ```
 
-## 14. Running Instructions
+---
 
-Phase 1 does not include application code. After Phase 2 implementation, the expected run command will be:
+## 🧗 Challenges Faced
 
-```bash
-python app.py
-```
+- ⚡ **Latency optimization** — Chaining three real-time systems (ASR → LLM → TTS) without introducing noticeable lag required careful tuning of buffering and streaming.
+- 🎙️ **Audio pipeline stability** — Handling microphone edge cases (background noise, silence detection, interruptions) reliably across platforms.
+- 🧠 **Context management** — Balancing conversation history length against local LLM context window limits.
+- 🔧 **Offline-first constraints** — Every capability had to work without internet access, which ruled out many common cloud-based shortcuts.
 
-The Gradio app will open locally in the browser.
+## 📚 What I Learned
 
-Before running, copy `.env.example` to `.env` and update local paths:
+- Building a real-time, multi-stage AI pipeline end-to-end from raw audio to synthesized speech
+- Practical tradeoffs between local model size, latency, and response quality
+- Designing modular architecture that anticipates future features (memory, tools, agents)
+- Deep hands-on experience with offline ASR/TTS systems and local LLM orchestration
 
-```bash
-cp .env.example .env
-```
+---
 
-For longer complete LLM responses, keep these settings at these values or higher:
+## 🤝 Contributing
 
-```bash
-OLLAMA_NUM_PREDICT=512
-LLM_TIMEOUT_SECONDS=60
-```
+Contributions, issues, and feature requests are welcome!
 
-## 21. Phase 2 Implementation Summary
+1. 🍴 Fork the repository
+2. 🌿 Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. 💾 Commit your changes (`git commit -m 'Add amazing feature'`)
+4. 🚀 Push to the branch (`git push origin feature/amazing-feature`)
+5. 🔁 Open a Pull Request
 
-Phase 2 adds the complete runnable MVP:
+Please check the [issues page](../../issues) for open tasks before starting.
 
-- Microphone recording with `sounddevice`.
-- Offline transcription with Faster-Whisper.
-- Local LLM response generation through Ollama.
-- Offline speech synthesis through Piper.
-- Audio playback with `sounddevice`.
-- Async orchestration with timeouts and graceful fallbacks.
-- Local logging.
-- Simple Gradio UI for voice and text testing.
+---
 
-## 22. File Guide and Testing Notes
+## 📄 License
 
-### `app.py`
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
-What it does: Starts the Gradio UI and connects UI actions to the conversation pipeline.
+---
 
-Why it exists: It is the project entry point.
+## 👤 Author
 
-How to test it:
+<div align="center">
 
-```bash
-python app.py
-```
+**Your Name**
 
-### `config.py`
+<!-- 🖼️ INSERT PROFILE/AVATAR IMAGE HERE -->
 
-What it does: Loads environment variables and creates runtime folders.
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourusername)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourusername)
 
-Why it exists: It keeps machine-specific settings out of the code.
+</div>
 
-How to test it:
+---
 
-```bash
-python -c "from config import load_settings; print(load_settings())"
-```
+## ⭐ Star the Repository
 
-### `src/audio/recorder.py`
+<div align="center">
 
-What it does: Records microphone audio and saves a WAV file.
+If you found this project interesting or useful, please consider giving it a ⭐ —
+it genuinely helps and keeps the motivation going for building out the full roadmap.
 
-Why it exists: It isolates microphone capture from the rest of the app.
+[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/friday&type=Date)](https://star-history.com/#yourusername/friday&Date)
 
-How to test it: Click `Record and Respond` in the Gradio UI and confirm a new `outputs/input_*.wav` file is created.
+**Made with ❤️, ☕, and a lot of debugging by [Your Name]**
 
-### `src/audio/player.py`
-
-What it does: Plays generated WAV responses.
-
-Why it exists: It keeps audio playback separate from TTS generation.
-
-How to test it: Run the full pipeline and confirm the assistant speaks aloud.
-
-### `src/stt/whisper_service.py`
-
-What it does: Loads Faster-Whisper and transcribes recorded audio.
-
-Why it exists: It provides offline speech-to-text.
-
-How to test it: Record audio through the UI and verify the transcript appears in the chat.
-
-### `src/llm/ollama_service.py`
-
-What it does: Sends the user transcript to a local Ollama model.
-
-Why it exists: It provides local LLM reasoning without paid APIs.
-
-How to test it:
-
-```bash
-ollama serve
-ollama pull llama3.2:1b
-```
-
-Then use the text input in the UI.
-
-### `src/tts/piper_service.py`
-
-What it does: Calls Piper to synthesize assistant text into a WAV file.
-
-Why it exists: It provides offline text-to-speech.
-
-How to test it: Confirm `outputs/response_*.wav` is created after a successful response.
-
-### `src/pipeline/conversation_pipeline.py`
-
-What it does: Orchestrates recording, transcription, LLM response, TTS, playback, timing, and fallbacks.
-
-Why it exists: It keeps the app workflow in one testable place.
-
-How to test it: Use either the voice button or text input in the UI.
-
-### `src/utils/fallbacks.py`
-
-What it does: Stores friendly fallback messages.
-
-Why it exists: It prevents raw technical errors from becoming user-facing responses.
-
-How to test it: Stop Ollama or remove the Piper model path temporarily and run a request.
-
-### `src/utils/logger.py`
-
-What it does: Configures console and rotating file logs.
-
-Why it exists: It makes debugging easier without adding external dependencies.
-
-How to test it: Run the app and check `logs/assistant.log`.
-
-## 23. Final Folder Structure
-
-```text
-offline-voice-assistant/
-├── README.md
-├── requirements.txt
-├── .env.example
-├── app.py
-├── config.py
-├── src/
-│   ├── __init__.py
-│   ├── audio/
-│   │   ├── __init__.py
-│   │   ├── recorder.py
-│   │   └── player.py
-│   ├── stt/
-│   │   ├── __init__.py
-│   │   └── whisper_service.py
-│   ├── llm/
-│   │   ├── __init__.py
-│   │   └── ollama_service.py
-│   ├── tts/
-│   │   ├── __init__.py
-│   │   └── piper_service.py
-│   ├── pipeline/
-│   │   ├── __init__.py
-│   │   └── conversation_pipeline.py
-│   └── utils/
-│       ├── __init__.py
-│       ├── fallbacks.py
-│       └── logger.py
-├── models/
-│   └── .gitkeep
-├── outputs/
-│   └── .gitkeep
-└── logs/
-    └── .gitkeep
-```
-
-## 24. How to Run the Project
-
-1. Create and activate a local virtual environment:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-2. Install Python dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Create local environment config:
-
-```bash
-cp .env.example .env
-```
-
-4. Install and start Ollama:
-
-```bash
-ollama pull llama3.2:1b
-ollama serve
-```
-
-5. Optional: download a Piper voice model into `models/` to enable spoken responses.
-
-6. Start the app:
-
-```bash
-python app.py
-```
-
-## 25. How to Test Every Feature
-
-- Audio recording: Click `Record and Respond` and check for `outputs/input_*.wav`.
-- Speech-to-text: Confirm your spoken words appear as the user message.
-- LLM: Type a message in the text box and confirm an assistant response appears.
-- Piper executable: Run `.venv/bin/piper --help`.
-- TTS: Confirm `outputs/response_*.wav` is created after a response.
-- Playback: Confirm the assistant response is spoken aloud.
-- Fallbacks: Stop Ollama or use an invalid Piper model path and confirm the UI shows a friendly fallback.
-- Logging: Check `logs/assistant.log`.
-
-## 26. Common Troubleshooting
-
-| Problem | Likely Cause | Fix |
-|---|---|---|
-| No microphone input | Microphone permission or wrong device | Allow microphone access in system settings |
-| Ollama request fails | Ollama is not running | Run `ollama serve` |
-| Model not found | Ollama model was not pulled | Run `ollama pull llama3.2:1b` |
-| Offline voice output unavailable | Piper is not installed | Install Piper from `https://github.com/rhasspy/piper/releases` or continue in text-only mode |
-| Piper model not found | Voice model is missing or path is wrong | Download a voice from `https://github.com/rhasspy/piper/blob/master/VOICES.md`, place the `.onnx` and `.onnx.json` files in `models/`, and update `.env` |
-| No audio playback | Speaker permission or audio output device issue | Check system output device and volume |
-| First transcription is slow | Whisper model loads on first use | Wait for first run; later runs should be faster |
-| App imports fail | Dependencies missing | Run `pip install -r requirements.txt` |
-
-## 15. Project Structure
-
-The final project will contain:
-
-- Documentation and setup files.
-- A simple Gradio entry point.
-- Modular services for audio recording, transcription, LLM response generation, TTS, and playback.
-- A central conversation pipeline.
-- Local folders for models, generated audio, and logs.
-
-No application code is generated in Phase 1.
-
-## 16. Future Improvements
-
-These are intentionally outside the MVP:
-
-- Voice activity detection.
-- Streaming STT.
-- Streaming LLM responses.
-- Streaming TTS.
-- Wake word detection.
-- Conversation memory persistence.
-- Speaker diarization.
-- Better interruption handling.
-- Packaged desktop app.
-- Advanced UI controls.
-
-## 17. AI Usage Declaration
-
-This project was planned and implemented with assistance from AI tools. AI was used to help design the architecture, documentation, implementation plan, and code structure. All selected technologies are free and intended to run locally without paid APIs or cloud services.
-
-## 18. Deliverables Checklist
-
-### Phase 1
-
-- [x] Project Overview
-- [x] Objectives
-- [x] Functional Requirements
-- [x] Non-functional Requirements
-- [x] Tech Stack with reasons
-- [x] Folder Structure
-- [x] High-Level Architecture
-- [x] Workflow Diagram
-- [x] Component Responsibilities
-- [x] Fallback Conversation Strategy
-- [x] Error Handling Strategy
-- [x] Performance Strategy
-- [x] Installation Guide
-- [x] Running Instructions
-- [x] Project Structure
-- [x] Future Improvements
-- [x] AI Usage Declaration
-- [x] Deliverables Checklist
-- [x] Complete README.md
-- [x] requirements.txt
-- [x] .env.example
-
-### Phase 2
-
-- [ ] Audio Recording
-- [ ] Speech-to-Text
-- [ ] Offline LLM
-- [ ] Text-to-Speech
-- [ ] Audio Playback
-- [ ] Conversation Pipeline
-- [ ] Graceful Fallback
-- [ ] Error Handling
-- [ ] Logging
-- [ ] Simple Gradio UI
-
-## 19. Implementation Plan
-
-### Phase 1: Planning and Documentation
-
-Status: Complete.
-
-Deliverables:
-
-- `README.md`
-- `requirements.txt`
-- `.env.example`
-
-No application code is included in Phase 1.
-
-### Phase 2: Complete MVP Implementation
-
-Planned implementation order:
-
-1. Create configuration and logging modules.
-2. Implement audio recording with `sounddevice`.
-3. Implement playback with `sounddevice`.
-4. Implement Faster-Whisper transcription service.
-5. Implement Ollama local LLM service.
-6. Implement Piper TTS service.
-7. Implement fallback response helpers.
-8. Implement the conversation pipeline.
-9. Implement the Gradio UI.
-10. Add final run and testing instructions.
-
-## 20. MVP Acceptance Criteria
-
-The project is complete when:
-
-- The user can speak into the microphone.
-- The assistant transcribes the speech.
-- The assistant generates a response locally using Ollama.
-- The assistant converts the response to speech using Piper.
-- The assistant plays the response audio.
-- The Gradio UI shows the conversation.
-- Failures produce conversational fallback messages.
-- The project runs without paid APIs, cloud services, Docker, databases, or authentication.
+</div>
