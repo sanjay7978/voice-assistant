@@ -417,11 +417,17 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
+## 📸 Screenshots
+
+<img width="1470" height="956" alt="image" src="https://github.com/user-attachments/assets/57ba6a02-55a6-41e4-bf9f-4ecd325cb970" />
+
+
+---
 ## 👤 Author
 
 <div align="center">
 
-**Your Name**
+**R Sanjay**
 
 <!-- 🖼️ INSERT PROFILE/AVATAR IMAGE HERE -->
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sanjay7978)
