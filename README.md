@@ -6,7 +6,7 @@
 <!-- 🖼️ INSERT HERO BANNER IMAGE HERE (1280x640 recommended) -->
 <!-- ![FRIDAY Hero Banner](./assets/hero-banner.png) -->
 
-**A real-time, offline-first, voice-native AI assistant — inspired by Tony Stark's J.A.R.V.I.S. & F.R.I.D.A.Y.**
+**A real-time, offline-first, voice-native AI assistant — inspired by Tony Stark's J.A.R.V.I.S. & F.R.I..A.Y.**
 
 <!-- Animated typing banner placeholder — generate at https://readme-typing-svg.demolab.com -->
 <!-- ![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=00F5FF&center=true&vCenter=true&width=600&lines=Listening...;Thinking...;Speaking...;Your+Personal+AI+is+Online.) -->
